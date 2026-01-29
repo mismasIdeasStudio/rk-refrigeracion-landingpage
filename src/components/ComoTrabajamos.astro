@@ -1,0 +1,93 @@
+---
+const items = [
+    {
+        title: "Análisis de requisitos",
+        content:
+            "Evaluamos tus necesidades y las condiciones del espacio para ofrecerte la solución de refrigeración más adecuada.",
+    },
+    {
+        title: "Desarrollo de propuesta",
+        content:
+            "Diseñamos una propuesta personalizada con equipos eficientes, costos claros y tiempos de ejecución definidos.",
+    },
+    {
+        title: "Inicio del proyecto",
+        content:
+            "Realizamos la instalación y puesta en marcha con personal capacitado y supervisión en cada etapa del proceso.",
+    },
+    {
+        title: "Soporte post-proyecto",
+        content:
+            "Brindamos soporte y asesoría continua para garantizar el óptimo funcionamiento de tu sistema de refrigeración.",
+    },
+];
+---
+
+<section
+    id="como-trabajamos"
+    class="py-20 p-3 md:flex md:flex-row md:justify-evenly md:items-center bg-white text-black"
+>
+    <div
+        class="bg-blue-600 text-white p-5 sm:p-20 md:p-25 lg:p-30 flex items-center justify-center w-full md:w-1/2 aspect-square min-h-75 max-h-screen"
+    >
+        <div class="w-full">
+            <h2 class="text-3xl font-bold mb-6">Proceso de trabajo</h2>
+            <p class="border-t pt-5 lg:text-xl">
+                Nuestro proceso de trabajo está diseñado para garantizar
+                soluciones de refrigeración eficientes, seguras y duraderas.
+                Acompañamos a nuestros clientes en cada etapa del proyecto,
+                desde el análisis inicial hasta el posterior a la instalación,
+                asegurando calidad, cumplimiento y total satisfacción.
+            </p>
+        </div>
+    </div>
+    <div
+        class="accordion mt-10 space-y-4 w-full md:w-1/2 shrink-0 grow-0"
+        data-accordion
+    >
+        {
+            items.map((item) => (
+                <div class="border-b">
+                    <button
+                        class="w-full flex justify-between items-center p-4 font-semibold"
+                        data-accordion-button
+                        aria-expanded="false"
+                    >
+                        {item.title}
+                        <span class="transition-transform text-blue-500">
+                            +
+                        </span>
+                    </button>
+
+                    <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300 px-4">
+                        <p class="py-4 text-gray-600">{item.content}</p>
+                    </div>
+                </div>
+            ))
+        }
+    </div>
+</section>
+
+<script>
+    const accordion = document.querySelector("[data-accordion]");
+    const buttons = accordion.querySelectorAll("[data-accordion-button]");
+
+    buttons?.forEach((btn) => {
+        btn.addEventListener("click", () => {
+            const content = btn.nextElementSibling;
+            const isOpen = btn.getAttribute("aria-expanded") === "true";
+
+            buttons.forEach((b) => {
+                b.setAttribute("aria-expanded", "false");
+                b.nextElementSibling.style.maxHeight = null;
+                b.querySelector("span").classList.remove("rotate-180");
+            });
+
+            if (!isOpen) {
+                btn.setAttribute("aria-expanded", "true");
+                content.style.maxHeight = content.scrollHeight + "px";
+                btn.querySelector("span").classList.add("rotate-180");
+            }
+        });
+    });
+</script>

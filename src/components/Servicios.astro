@@ -1,0 +1,76 @@
+---
+import "../styles/global.css";
+import Copo from "@icons/Copo.astro";
+import Tool from "@icons/Tool.astro";
+import Pencil from "@icons/Pencil.astro";
+---
+
+<section
+    id="servicios"
+    class="h-200 bg-white text-black flex flex-col justify-evenly"
+>
+    <div class="ml-3 mr-3">
+        <h2 class="text-2xl font-bold">Servicios</h2>
+        <div class="text-sm lg:text-base">
+            <p>Nos especializamos en la venta de equipos de</p>
+            <p>sistemas de refrigeración de alta calidad, mantenimiento</p>
+            <p>preventivo y correctivo de aires acondicionados,</p>
+            <p>camaras de refriegracion y chillers, así como en</p>
+            <p>el diseño de sistemas de refrigeracion.</p>
+        </div>
+    </div>
+    <div
+        class="gap-10 py-3 px-3 grid grid-cols-1 grid-rows-3 sm:grid-cols-3 sm:grid-rows-1 sm:gap-2 md:gap-4 md:px-10"
+    >
+        <div class="flex flex-col sm:border-r sm:border-black">
+            <div class="inline-flex flex-row items-center">
+                <Copo />
+                <h3 class="card-descripcion-servicio font-semibold">
+                    Venta de equipos de<br /> refrigeración
+                </h3>
+            </div>
+            <p class="mt-2 p-5 md:text-sm">
+                Equipos de refrigeración eficientes y confiables, desde aire
+                acondicionado hasta chillers de alta capacidad, adaptados a tu
+                negocio.
+            </p>
+        </div>
+
+        <div class="flex flex-col sm:border-r sm:border-black">
+            <div class="inline-flex flex-row items-center">
+                <Tool />
+                <h3 class="card-descripcion-servicio font-semibold">
+                    Mantenimiento preventivo<br /> y correctivo
+                </h3>
+            </div>
+            <p class="mt-2  p-5 md:text-sm">
+                Mantenimiento preventivo y correctivo para sistemas y equipos de
+                refrigeración, asegurando mayor rendimiento, menos fallas y
+                operación continua.
+            </p>
+        </div>
+
+        <div class="flex flex-col">
+            <div class="inline-flex flex-row items-center">
+                <Pencil />
+                <h3 class="card-descripcion-servicio font-semibold">
+                    Diseño de sistemas de<br /> refrigeración
+                </h3>
+            </div>
+            <p class="mt-2 p-5 md:text-sm ">
+                Diseño de sistemas de refrigeración a la medida y camaras de
+                refrigeracion, optimizados para eficiencia, control térmico y
+                rendimiento industrial.
+            </p>
+        </div>
+    </div>
+</section>
+<style>
+    .card-descripcion-servicio {
+        font-size: clamp(1rem, 2vw, 2rem);
+    }
+
+    h3 {
+        line-height: 1;
+    }
+</style>

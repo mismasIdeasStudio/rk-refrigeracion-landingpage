@@ -1,0 +1,92 @@
+<footer id="footer" class="h-screen flex flex-col justify-between">
+    <div
+        id="toast"
+        class="fixed bottom-6 right-6 z-50 hidden
+         bg-black text-white px-4 py-2 rounded-xl shadow-lg
+         text-sm transition-opacity duration-300"
+    >
+        Copiado al portapapeles ✅
+    </div>
+    <div
+        class="p-5 sm:p-0 grid grid-cols-1 grid-rows-3 sm:grid-cols-3 sm:grid-rows-1 border-t-2 border-b-2 sm:justify-center sm:items-center"
+    >
+        <a
+            href="https://www.instagram.com/raul_rk/"
+            class="sm:border-r-2 sm:text-center cursor-pointer">@raul_rk</a
+        >
+        <a
+            class="sm:border-r-2 sm:text-center cursor-pointer"
+            onclick="copyToClipboard('rkrefrigeracion15@gmail.com')"
+            >rkrefrigeracion15@gmail.com</a
+        >
+        <a
+            class="sm:text-center cursor-pointer"
+            onclick="copyToClipboard('+52 722-650-3888')">+52 722-650-3888</a
+        >
+    </div>
+    <div>
+        <div
+            class="p-4 sm:grid sm:grid-cols-3 sm:grid-rows-1 gap-2 text-base border-t-2 border-b-2 justify-end"
+        >
+            <div class="flex flex-row sm:justify-center">
+                <div class="flex flex-col sm:justify-start sm:items-start">
+                    <a href="#nosotros">Sobre nosotros</a>
+                    <a href="#servicios">Servicios</a>
+                    <a href="#como-trabajamos">Como trabajamos</a>
+                </div>
+            </div>
+            <div class="flex flex-row sm:justify-center">
+                <div class="flex flex-col sm:justify-start sm:items-start">
+                    <p>
+                        Lago izamal #107, col. Seminario,<br /> Toluca, Estado de
+                        México
+                    </p>
+                </div>
+            </div>
+
+            <div class="flex flex-row sm:justify-center">
+                <div class="flex flex-col sm:justify-start sm:items-start">
+                    <a href="/aviso-de-privacidad">aviso de privacidad</a>
+                </div>
+            </div>
+        </div>
+        <h1 class="nombre-empresa font-bold py-1">RK REFRIGERACION</h1>
+    </div>
+</footer>
+<style>
+    .nombre-empresa {
+        margin-block-start: 0;
+        margin-block-end: 0;
+        font-size: clamp(2rem, 10.5vw, 18rem);
+        text-align: center;
+    }
+</style>
+<script is:inline>
+    function showToast(message) {
+        const toast = document.getElementById("toast");
+        toast.textContent = message;
+
+        toast.classList.remove("hidden", "opacity-0");
+        toast.classList.add("opacity-100");
+
+        setTimeout(() => {
+            toast.classList.add("opacity-0");
+            setTimeout(() => {
+                toast.classList.add("hidden");
+            }, 300);
+        }, 2000);
+    }
+
+    function copyToClipboard(text) {
+        navigator.clipboard
+            .writeText(text)
+            .then(() => {
+                showToast("Copiado al portapapeles ✅");
+            })
+            .catch(() => {
+                showToast("Error al copiar ❌");
+            });
+    }
+
+    window.copyToClipboard = copyToClipboard;
+</script>

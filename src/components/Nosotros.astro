@@ -1,0 +1,29 @@
+---
+import Gallery from "./Gallery.astro";
+---
+
+<section id="nosotros" class="bg-white text-black p-3">
+    <h1 class="text-2xl font-bold">Nosotros</h1>
+    <div class="mt-5 flex flex-col items-start sm:items-center">
+        <div class="parrafo-nosotros sm:mt-30 sm:mb-30">
+            <p class="font-bold">Somos una empresa especializada</p>
+            <p class="font-bold">en el área de la refrigeración, con</p>
+            <p class="font-bold">más de 10 años de experiencia</p>
+        </div>
+    </div>
+    <Gallery />
+    <div class="mt-10">
+        <p class="text-sm md:text-base">
+            Nos enfocamos en mejorar el rendimiento y la eficiencia<br /> de los sistemas
+            de refrigeración de nuestros clientes,<br /> ofreciendo resultados visibles
+            que optimizan su <br /> operación y protegen su inversión.
+        </p>
+    </div>
+</section>
+
+<style>
+    .parrafo-nosotros p {
+        font-size: clamp(1rem, 5vw, 4rem);
+        line-height: 1;
+    }
+</style>
