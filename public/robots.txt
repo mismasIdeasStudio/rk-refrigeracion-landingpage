@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: http://rkrefrigeracion.com.mx/sitemap.xml
+Sitemap: https://rkrefrigeracion.com.mx/sitemap.xml
